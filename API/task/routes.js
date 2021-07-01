@@ -1,7 +1,7 @@
 const express = require("express");
 
 //contoller
-const { tasksFetch,createTask } = require("./controllers");
+const { tasksFetch, createTask, deleteTask } = require("./controllers");
 
 const router = express.Router();
 
@@ -9,10 +9,9 @@ const router = express.Router();
 router.get("/", tasksFetch);
 
 //create tasks
-router.post("/",createTask);
+router.post("/", createTask);
 
-
-
-
+//delete task
+router.delete("/:taskID", deleteTask);
 
 module.exports = router;
