@@ -25,3 +25,14 @@ exports.deleteTask = (req, res) => {
     res.status(404).json({ message: `Task not found of ${taskID}` });
   }
 };
+
+exports.updateTask = (req, res) => {
+  const { taskID } = req.params;
+  const foundTask = tasks.find((task) => task.id === +taskID);
+  if (foundTask) {
+    foundTask.done = true;
+    res.status(204).end();
+  } else {
+    res.status(404).json({ message: "Task Not Found." });
+  }
+};
