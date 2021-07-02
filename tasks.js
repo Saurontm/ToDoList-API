@@ -10,6 +10,8 @@ const tasks = [
     id: 2,
     title: "Make trello board",
     done: true,
+    priority: "none",
+    tag: "none",
   },
   {
     id: 3,
@@ -22,6 +24,8 @@ const tasks = [
     id: 4,
     title: "Design application",
     done: false,
+    priority: "none",
+    tag: "none",
   },
 ];
 
