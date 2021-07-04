@@ -5,7 +5,8 @@ exports.tasksFetch = (req, res) => {
 };
 
 exports.createTask = (req, res) => {
-  const id = tasks.length + 1;
+  //this is to help avoid having two objects with the same id
+  const id = tasks[tasks.length-1].id+1;
   const newTask = {
     id: id,
     done: false,
