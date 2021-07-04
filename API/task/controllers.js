@@ -30,7 +30,7 @@ exports.updateTask = (req, res) => {
   const { taskID } = req.params;
   const foundTask = tasks.find((task) => task.id === +taskID);
   if (foundTask) {
-    foundTask.done = true;
+    foundTask.done = !foundTask.done;
     res.status(204).end();
   } else {
     res.status(404).json({ message: "Task Not Found." });
